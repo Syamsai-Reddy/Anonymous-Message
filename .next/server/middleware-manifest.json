@@ -3,6 +3,7 @@
   "middleware": {
     "/": {
       "files": [
+        "prerender-manifest.js",
         "server/edge-runtime-webpack.js",
         "server/src/middleware.js"
       ],
@@ -10,16 +11,63 @@
       "page": "/",
       "matchers": [
         {
-          "regexp": "^/.*$",
-          "originalSource": "/:path*"
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/dashboard(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(.json)?[\\/#\\?]?$",
+          "originalSource": "/dashboard/:path*"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/signin(.json)?[\\/#\\?]?$",
+          "originalSource": "/signin"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/signup(.json)?[\\/#\\?]?$",
+          "originalSource": "/signup"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?(?:\\/(\\/?index|\\/?index\\.json))?[\\/#\\?]?$",
+          "originalSource": "/"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/verify(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(.json)?[\\/#\\?]?$",
+          "originalSource": "/verify/:path*"
         }
       ],
       "wasm": [],
       "assets": [],
-      "environments": {}
+      "environments": {
+        "previewModeId": "cd4536f6b6cfee9335aadc883bb32064",
+        "previewModeSigningKey": "04ba8863b43236cff8c62f66761f4ebbd73811d94fecc396d46fe4acb5ec36d9",
+        "previewModeEncryptionKey": "87fbeae828980d9be9ef7ea00c1ce8a6c554199dde3aa84202e2ba5bb2fd5b65"
+      }
     }
   },
-  "functions": {},
+  "functions": {
+    "/api/suggest-messages/route": {
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/middleware-react-loadable-manifest.js",
+        "server/next-font-manifest.js",
+        "server/interception-route-rewrite-manifest.js",
+        "prerender-manifest.js",
+        "server/edge-runtime-webpack.js",
+        "server/app/api/suggest-messages/route.js"
+      ],
+      "name": "app/api/suggest-messages/route",
+      "page": "/api/suggest-messages/route",
+      "matchers": [
+        {
+          "regexp": "^/api/suggest\\-messages$",
+          "originalSource": "/api/suggest-messages"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "environments": {
+        "previewModeId": "cd4536f6b6cfee9335aadc883bb32064",
+        "previewModeSigningKey": "04ba8863b43236cff8c62f66761f4ebbd73811d94fecc396d46fe4acb5ec36d9",
+        "previewModeEncryptionKey": "87fbeae828980d9be9ef7ea00c1ce8a6c554199dde3aa84202e2ba5bb2fd5b65"
+      }
+    }
+  },
   "sortedMiddleware": [
     "/"
   ]

@@ -1,10 +1,18 @@
 {
-  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/api/accept-messages/route": "app/api/accept-messages/route.js",
   "/api/create-user-unique/route": "app/api/create-user-unique/route.js",
+  "/api/get-messages/route": "app/api/get-messages/route.js",
+  "/api/send-message/route": "app/api/send-message/route.js",
   "/api/signup/route": "app/api/signup/route.js",
   "/api/verify-code/route": "app/api/verify-code/route.js",
-  "/(app)/page": "app/(app)/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/api/delete-message/[messageid]/route": "app/api/delete-message/[messageid]/route.js",
   "/(auth)/signin/page": "app/(auth)/signin/page.js",
-  "/(auth)/verify/[username]/page": "app/(auth)/verify/[username]/page.js"
+  "/u/[username]/page": "app/u/[username]/page.js",
+  "/(app)/dashboard/page": "app/(app)/dashboard/page.js",
+  "/(app)/page": "app/(app)/page.js",
+  "/(auth)/verify/[username]/page": "app/(auth)/verify/[username]/page.js",
+  "/api/suggest-messages/route": "app/api/suggest-messages/route.js"
 }
