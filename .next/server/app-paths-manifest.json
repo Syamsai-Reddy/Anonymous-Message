@@ -1,0 +1,10 @@
+{
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/api/create-user-unique/route": "app/api/create-user-unique/route.js",
+  "/api/signup/route": "app/api/signup/route.js",
+  "/api/verify-code/route": "app/api/verify-code/route.js",
+  "/(app)/page": "app/(app)/page.js",
+  "/(auth)/signin/page": "app/(auth)/signin/page.js",
+  "/(auth)/verify/[username]/page": "app/(auth)/verify/[username]/page.js"
+}
